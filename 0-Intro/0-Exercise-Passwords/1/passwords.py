@@ -77,10 +77,10 @@ def test(classifier, passwords, labels, features):
 
 def run():
 	"""
-	We run the tests with increasingly 
-	more of the training data so we can 
-	track how the training data effects 
-	accuracy
+	We run the tests with each classifier,
+	increasingly the training data gradually
+	so we can track how the training data 
+	effects accuracy
 	"""
 	classifiers = [
 		'DecisionTreeClassifier',
