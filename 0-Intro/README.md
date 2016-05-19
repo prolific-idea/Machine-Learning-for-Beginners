@@ -111,5 +111,26 @@ print iris.feature_names, iris.target_names
 
 ```
 
+Or in R
+
+```
+
+data(iris)
+
+# data has not been split into training and testing, we're using the entire set to train.
+tree1 <- tree(Species ~ Sepal.Width + Petal.Length + Petal.Width, data = iris)
+summary(tree1)
+
+# Visualisation 
+# See the decision tree itself
+plot(tree1)
+text(tree1)
+
+# or the data with the decision boundaries
+plot(iris$Petal.Width,iris$Sepal.Width,pch=19,col=as.numeric(iris$Species))
+partition.tree(tree1,label="Species",add=TRUE)
+legend(1.75,4.5,legend=unique(iris$Species),col=unique(as.numeric(iris$Species)),pch=19)
+
 # References
 * [Google Developers YouTube](https://www.youtube.com/playlist?list=PLOU2XLYxmsIIuiBfYad6rFYQU_jL2ryal)
+* [Decision trees and forests in R] (http://www.r-bloggers.com/a-brief-tour-of-the-trees-and-forests/)
