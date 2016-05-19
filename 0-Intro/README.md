@@ -41,24 +41,37 @@ Software you require
 * [Python 2.7](https://www.python.org)
 * [Anaconda (Recommended)](https://www.continuum.io)
 
-### Hello World
+## Getting Setup with R
+Software you require
+* [R 3.3.0 or R 3.2.5](https://www.r-project.org/)
+* [R Studio (Recommended)](https://www.rstudio.com/products/rstudio/download/)
 
+## Hello World
+In this Python example we're providing a list of fruit and try to classify them as apples or oranges.
+For simplicity, we're using the weight of the fruit and the roughness of it's skin.
+If it's rough we're almost sure it's an orange. If it's smooth we're almost sure it's an apple.
 ```
 from sklearn import tree
 
-#A set of features of fruit
-#Weight as an integer, 1 = rough 2 = smooth
+#The features of fruit. [weight, rough(1) or smooth(0)]
 features = [[140, 1],[130, 1],[150, 0],[170, 0]]
-#Classification of the fruit. 0 = orange 1 = apple
+#The labels of the fruit in the feature list. Orange(1) or Apple(0) 
 labels = [0, 0, 1, 1]
 
+#The classifier that we're using. A simple decision tree.
 clf = tree.DecisionTreeClassifier()
+#Training the classifier with the fruit and their labels.
 clf = clf.fit(features, labels)
 
+#Predicting a new fruit
 print clf.predict([[160, 0]])
+
 ```
 
-### Iris Flower Classification
+## Iris Flower Classification
+This is an expansion of the hello world example with the iris flower dataset.
+Here we're trying to predict the type of iris flower based on it's petals and sepals.
+This example also demonstrates how to seperate a dataset for training and testing data.
 ```
 from sklearn.datasets import load_iris
 from sklearn import tree
