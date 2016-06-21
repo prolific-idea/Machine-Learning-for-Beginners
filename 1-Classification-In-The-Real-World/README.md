@@ -70,7 +70,7 @@ finally:
 
 You can also have a look [here](http://zetcode.com/db/sqlitepythontutorial/) for some more information on reading data from the SQLite database.
 
-Using the goals determined in the previous step begin by extracting the data and transforming it into features. For instance, of your goal is to classify the review score based on keywords (E.g. "Love", "Hate") you will have to read the review text, count the occurrences of the keyword(s) and then and then store those as part of your features.
+Using the goals determined in the previous step begin by extracting the data and transforming it into features. For instance, of your goal is to classify the review score based on keywords (E.g. "Love", "Hate") you will have to read the review text, count the occurrences of the keyword(s) and then store those as part of your features.
 
 Once you have all of the features extracted from the data you can use them to train the classifier. You will also have to think about preparing the data to test the predicted results from the classifier.
 
