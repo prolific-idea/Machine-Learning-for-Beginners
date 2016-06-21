@@ -77,6 +77,12 @@ Once you have all of the features extracted from the data you can use them to tr
 ## Implement and Experiment
 Implement a solution and experiment using a Naive Bayes algorithm.
 
-Scikit-Learn includes various Naive Bayes algorithms for you to use.  You can import the Naive Bayes algorithm of you choice and then train it.  This step is very similar to previous exercise and should be easy to implement.  For some examples you can look [here](http://scikit-learn.org/stable/modules/naive_bayes.html)
+Scikit-Learn includes various Naive Bayes models for you to use.  You can import the Naive Bayes model of your choice and then train it.  This step is very similar to previous exercise and should be easy to implement.  For some examples you can look [here](http://scikit-learn.org/stable/modules/naive_bayes.html)
 
-Experiment with different features and see if you can get the prediction closer to the actual results.
+There are three types of Naive Bayes models included with the scikit learn library:
+
+1. Gaussian: It is used in classification and it assumes that features follow a normal distribution.
+2. Multinomial: It is used for discrete counts. For example, let’s say,  we have a text classification problem. Here we can consider bernoulli trials which is one step further and instead of “word occurring in the document”, we have “count how often word occurs in the document”, you can think of it as “number of times outcome number x_i is observed over the n trials”.
+3. Bernoulli: The binomial model is useful if your feature vectors are binary (i.e. zeros and ones). One application would be text classification with ‘bag of words’ model where the 1s & 0s are “word occurs in the document” and “word does not occur in the document” respectively.
+
+Experiment with different features and models and see if you can get the prediction closer to the actual results.
