@@ -1,8 +1,8 @@
 # Machine Learning - Classification of Text
 ## Getting Started
 You will require the following software:
-* [Python]()
-* [Anaconda (Recommended)]()
+* [Python](https://www.python.org/)
+* [Anaconda (Recommended)](https://www.continuum.io/downloads)
 * [SQLite Editor]()
 
 ## Dataset: Amazon Fine Food Reviews
