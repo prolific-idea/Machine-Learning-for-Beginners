@@ -71,3 +71,7 @@ Java developers can make use of [deeplearning4j](http://deeplearning4j.org/).  I
 ### .Net
 
 .Net developers can make use of [The Accord Framework](http://accord-framework.net/).  It is not as extensive as Scikit-Learn but has most of the libraries available and is quite easy to use.  For an example on using it for this exercise you can have a look [here](http://accord-framework.net/docs/html/T_Accord_Statistics_Models_Regression_Linear_SimpleLinearRegression.htm)
+
+### R
+
+This particular task is also very well suited to the R language and for more information on how to do this in R using Linear Regression you can have a look [here](http://www.r-bloggers.com/simple-linear-regression-2/).
