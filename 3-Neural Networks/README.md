@@ -1,10 +1,23 @@
-# Machine Learning - Classification of Wine Quality
+# Machine Learning - Neural Networks
 ## Getting Started
 You will require the following software:
 * [Python](https://www.python.org/)
 * [Anaconda (Recommended)](https://www.continuum.io/downloads)
+* [SciKit-Learn](http://scikit-learn.org/stable/install.html)
+
+## Interesting Links
+* [Tensor Flow](https://www.tensorflow.org/)
+* [Tensor Flow Playground](http://playground.tensorflow.org/)
+* [Fast Text](https://github.com/facebookresearch/fastText)
+* [Google AI XPrize](http://ai.xprize.org/)
+* [List of popular github projects related to deep learning](https://github.com/aymericdamien/TopDeepLearning)
+* [Something cool to watch](https://www.youtube.com/watch?v=qv6UVOQ0F44)
+
 
 ## Dataset: Wine Quality
+
+### We are resuing the same dataset as the last meetup, but you can use the password dataset as well or any other dataset you like.
+
 This dataset has been obtained from [UCI Machine Learning Repository](http://archive.ics.uci.edu/ml/datasets/Wine+Quality).
 For sources and citations please visit that page.
 
@@ -53,16 +66,13 @@ More information about reading CSV files in python can be found [here](https://d
 Remember that you will have to separate the data into training and testing data sets.  For example you can use the first 80% or the rows to train the algorithm and the remaining 20% to test it.
 
 ## Implement and Experiment
-Implement a solution and experiment using a Regression algorithm.
+Create a classification Neural Network using your language and library of choice.  Keep in mind that training a Neural Network can take a long time and will require multiple passes of the same data due to the small error adjustments being made with every pass (This does depend on the algorithm being used but is usually the case for most).
 
-Scikit-Learn includes various regression models for you to use.  You can import the regression model of your choice and then train it.
+## Libraries and languages
 
-The easiest would be to use a Linear Regression model. For an example of how to use it you can have a look [here](http://scikit-learn.org/stable/auto_examples/linear_model/plot_ols.html).
-Linear regressing takes a single feature for its X axis, and uses the target as the Y axis.  So for example, you can have `fixed acidity` as your feature (X) and then `quality` as target (Y), using that to train the algorithm you will then be able to predict wine quality based on the `fixed acidity feature`
+### SciKit Learn
 
-## Other libraries and languages
-
-For the more adventurous types you can also make use of other libraries.  We have identified the following libraries for Java and .Net that you can use to perform similar tasks.  We have not tested these libraries yet though so they might not work as expected and we might not be able to assist you if you get stuck, but we will help where we can.
+Scikit learn is a python library with a whole range of different machine learning algorithms.  For Nueral Networks you can use the [Multi-Layer Perceptron](http://scikit-learn.org/dev/modules/neural_networks_supervised.html#classification)
 
 ### Java
 
