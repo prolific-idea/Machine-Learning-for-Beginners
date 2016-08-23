@@ -66,7 +66,7 @@ More information about reading CSV files in python can be found [here](https://d
 Remember that you will have to separate the data into training and testing data sets.  For example you can use the first 80% or the rows to train the algorithm and the remaining 20% to test it.
 
 ## Implement and Experiment
-Create a classification Neural Network using your language and library of choice.  Keep in mind that training a Neural Network can take a long time and will require multiple passes of the same data due to the small error adjustments being made with every pass (This does depend on the algorithm being used but is usually the case for most).
+Create a classification Neural Network using your language and library of choice.  Keep in mind that training a Neural Network can take a long time and might require multiple passes of the same data due to the small error adjustments being made with every pass.
 
 ## Libraries and languages
 
