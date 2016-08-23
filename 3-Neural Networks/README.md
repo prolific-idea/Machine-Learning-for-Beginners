@@ -16,7 +16,7 @@ You will require the following software:
 
 ## Dataset: Wine Quality
 
-### We are resuing the same dataset as the last meetup, but you can use the password dataset as well or any other dataset you like.
+### We are reusing the same dataset as the last meetup, but you can use the password dataset or any other dataset you like.
 
 This dataset has been obtained from [UCI Machine Learning Repository](http://archive.ics.uci.edu/ml/datasets/Wine+Quality).
 For sources and citations please visit that page.
