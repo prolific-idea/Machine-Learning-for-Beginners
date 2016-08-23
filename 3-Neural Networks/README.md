@@ -76,12 +76,12 @@ Scikit learn is a python library with a whole range of different machine learnin
 
 ### Java
 
-Java developers can make use of [deeplearning4j](http://deeplearning4j.org/).  It is not as extensive as Scikit-Learn but you can accomplish some of the tasks here using this library.  `deeplearning4j` uses neural networks for it's regression tasks and for some examples on how this is accomplished you can have a look [here](http://deeplearning4j.org/linear-regression).
+Java developers can make use of [deeplearning4j](http://deeplearning4j.org/).  It is not as extensive as Scikit-Learn but you can does focus deep learning and Neural Networks.
 
 ### .Net
 
-.Net developers can make use of [The Accord Framework](http://accord-framework.net/).  It is not as extensive as Scikit-Learn but has most of the libraries available and is quite easy to use.  For an example on using it for this exercise you can have a look [here](http://accord-framework.net/docs/html/T_Accord_Statistics_Models_Regression_Linear_SimpleLinearRegression.htm)
+.Net developers can make use of [The Accord Framework](http://accord-framework.net/).  It is not as extensive as Scikit-Learn but has most of the libraries available and is quite easy to use.
 
 ### R
 
-This particular task is also very well suited to the R language and for more information on how to do this in R using Linear Regression you can have a look [here](http://www.r-bloggers.com/simple-linear-regression-2/).
+R can also be used for Neural Networks and an explanation of how to accomplish it you can have a look at [this blog post](https://www.r-bloggers.com/fitting-a-neural-network-in-r-neuralnet-package/)
