@@ -6,7 +6,7 @@ You will require the following software:
 * [SciKit-Learn](http://scikit-learn.org/stable/install.html)
 * [SciKit-Image](http://scikit-image.org/download.html)
 
-## Hackathon - Coins
+## Hackathon - Coins and Experiments
 
 The coins.py code included is an example of how segmentation can be applied to images. The code step by step demonstrates how specific algorithms can be applied to segment the individual coins.
 
@@ -18,7 +18,7 @@ Here is an example of different filters being applied to the coins image.
 
 ![Image Processing](http://www.prolificidea.com/assets/img/ai/image_processing-coins.jpg)
 
-Experiment with the code and the SciKit Image API to segment the lena.jpg image. Share any interesting findings with everyone else at the hackathon.
+**Experiment with the code and the SciKit Image API to segment the lena.jpg image. Share any interesting findings with everyone else at the hackathon.**
 
 [SciKit Image Guides](http://scikit-image.org/docs/stable/auto_examples/index.html)
 
