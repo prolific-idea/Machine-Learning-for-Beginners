@@ -6,8 +6,9 @@ from scipy import ndimage as ndi
 from skimage.filters import sobel
 from skimage.morphology import watershed
 
-# Load coins image data
+# Load coins image data from skimage
 image = data.coins()
+# Load lena image from file system
 image = skimage.io.imread('Dataset/lena.jpg',flatten=True)
 io.imshow(image)
 io.show()
