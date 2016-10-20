@@ -76,7 +76,7 @@ Scikit learn is a python library with a whole range of different machine learnin
 
 ### Java
 
-Java developers can make use of [deeplearning4j](http://deeplearning4j.org/).  It is not as extensive as Scikit-Learn but you can does focus deep learning and Neural Networks.
+Java developers can make use of [deeplearning4j](http://deeplearning4j.org/).  It is not as extensive as Scikit-Learn but it can be used for deep learning and Neural Networks.
 
 ### .Net
 
