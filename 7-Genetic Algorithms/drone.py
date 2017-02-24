@@ -18,11 +18,11 @@ class Drone:
             self.xLocation += 1
         self.distanceTraveled += 1
         
-    def addItem(self, warehouseID, item):
+    def add_item(self, warehouseID, item):
         self.items[warehouseID] = item
         
         
-    def removeItem(self, itemToRemove):
+    def remove_item(self, itemToRemove):
         for key in self.items.keys():
             if self.items[key] == itemToRemove:
                 del self.items[key]

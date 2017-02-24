@@ -1,7 +1,7 @@
 import numpy as np
 
 class Warehouse:
-    def __init__(self, items, ID):
+    def __init__(self, ID, items):
         self.warehouseID = ID
         self.items = items
         
