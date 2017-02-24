@@ -1,5 +1,3 @@
-import numpy as np
-
 class Drone:
     def __init__(self):
         self.xLocation = 0
@@ -18,13 +16,12 @@ class Drone:
             self.xLocation += 1
         self.distanceTraveled += 1
         
-    def add_item(self, warehouseID, item):
-        self.items[warehouseID] = item
-        
-        
-    def remove_item(self, itemToRemove):
+    def add_item(self, warehouse_ID, item):
+        self.items[warehouse_ID] = item
+
+    def remove_item(self, item_to_remove):
         for key in self.items.keys():
-            if self.items[key] == itemToRemove:
+            if self.items[key] == item_to_remove:
                 del self.items[key]
                 return True
         return False
