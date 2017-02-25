@@ -25,7 +25,10 @@ class Simulation:
                 break
             elif gene.drone_ID > self.number_of_drones:
                 self.error(gene, "Cannot index drone that does not exist")
-            self.possible_moves[gene.action](gene)
+            try:
+                self.possible_moves[gene.action](gene)
+            except KeyError:
+                self.error(gene, "Invalid action")
 
     def move_north(self, gene):
         if self.drones[gene.drone_ID - 1].yLocation - 1 < 0:
