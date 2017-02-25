@@ -7,8 +7,7 @@ Created on Fri Feb 24 16:32:29 2017
 import numpy as np
 import random as rand
 
-import warehouse as w
-import delivery as d                
+import warehouse as w         
                   
 """
 Generates a random list of Warehouse objects conforming to the provided parameters.
@@ -31,8 +30,9 @@ def make_warehouses(warehouse_num_range, items, inventory_size_range, seed = Non
         rand.seed(seed)
     num_of_items = np.size(items)        
     if num_of_items < inventory_size_range[1]:
-        print "For a max inventory size of ", inventory_size_range[1], 
-        " you need space for at least ", inventory_size_range[1], " stock."
+        print "For a max inventory size of", inventory_size_range[1], 
+        print "you need at least", inventory_size_range[1], "stock items.",
+        print "There are currently only", num_of_items, "stock items."
         return None        
         
     num_of_warehouses = rand.randint(warehouse_num_range[0], warehouse_num_range[1])
