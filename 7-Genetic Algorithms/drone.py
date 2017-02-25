@@ -5,15 +5,9 @@ class Drone:
         self.items = {}
         self.distanceTraveled = 0
         
-    def move(self, action):
-        if action == 'N':
-            self.yLocation -= 1
-        elif action == 'S':
-            self.yLocation += 1
-        elif action == 'W':
-            self.xLocation -= 1
-        elif action == 'E':
-            self.xLocation += 1
+    def move(self, x=0, y=0):
+        self.xLocation += x
+        self.yLocation += y
         self.distanceTraveled += 1
         
     def add_item(self, warehouse_ID, item):
