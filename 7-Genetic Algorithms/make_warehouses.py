@@ -27,8 +27,10 @@ e.g.    Calling make_warehouses([5,10], ['shoe','ball','book'], [2,3]) will retu
         If a seed is provided, all proceeding calls to make_warehouses with the 
         same seed will return an identical Warehouse object array. 
 """
-def make_warehouses(warehouse_num_range, items, inventory_size_range, seed = None): 
-    if seed != None:
+
+
+def make_warehouses(warehouse_num_range, items, inventory_size_range, seed=None):
+    if seed is None:
         rand.seed(seed)
     num_of_items = np.size(items)        
     if num_of_items < inventory_size_range[1]:

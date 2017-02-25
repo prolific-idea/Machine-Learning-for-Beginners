@@ -32,15 +32,14 @@ items = np.array(['book', 'pen', 'laptop', 'mug', 'ball',
                   'shoes', 'shirt', 'DVD', 'tablet', 'dogfood'])
                   
 warehouse_array, total_warehouse_items = MW.make_warehouses([1, 10], items, [1, 10])
-if warehouse_array != None:
+if warehouse_array is not None:
     print "All Warehouse Items :\n", total_warehouse_items        
     print "\nWarehouse Items :"
     for warehouse in warehouse_array:
         print warehouse.items
                           
 delivery_array = MDP.make_delivery_points([1, 10], total_warehouse_items, [1, np.size(total_warehouse_items)-1])
-if delivery_array != None:
+if delivery_array is not None:
     print "\nDelivery Point Items :"
     for delivery in delivery_array:
         print delivery.orders
-    
