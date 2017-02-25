@@ -1,13 +1,8 @@
-"""
-Created on Fri Feb 24 16:32:29 2017
-
-@author: jp.strydom
-"""
-
 import numpy as np
 import random as rand
+from sys import exit
 
-import warehouse as w         
+from warehouse import Warehouse         
                   
 """
 Generates a random list of Warehouse objects conforming to the provided parameters.
@@ -27,17 +22,14 @@ e.g.    Calling make_warehouses([5,10], ['shoe','ball','book'], [2,3]) will retu
         If a seed is provided, all proceeding calls to make_warehouses with the 
         same seed will return an identical Warehouse object array. 
 """
-
-
 def make_warehouses(warehouse_num_range, items, inventory_size_range, seed=None):
     if seed is None:
         rand.seed(seed)
     num_of_items = np.size(items)        
     if num_of_items < inventory_size_range[1]:
-        print "For a max inventory size of", inventory_size_range[1], 
-        print "you need at least", inventory_size_range[1], "stock items.",
-        print "There are currently only", num_of_items, "stock items."
-        return None, None        
+        exit("For a max inventory size of " + str(inventory_size_range[1]) + 
+             " you need at least " + str(inventory_size_range[1]) + " stock items." +
+             "There are currently only " + str(num_of_items) + " stock items.")
         
     num_of_warehouses = rand.randint(warehouse_num_range[0], warehouse_num_range[1])
     warehouse_array = np.empty(num_of_warehouses, dtype=object)
@@ -56,7 +48,7 @@ def make_warehouses(warehouse_num_range, items, inventory_size_range, seed=None)
             if items[rand_int] not in total_warehouse_items:
                 total_warehouse_items = np.append(total_warehouse_items, items[rand_int])
             
-        warehouse = w.Warehouse(i, warehouse_items)
+        warehouse = Warehouse(i, warehouse_items)
         warehouse_array[i] = warehouse  
         
     return warehouse_array, total_warehouse_items

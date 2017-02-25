@@ -5,7 +5,7 @@ class Drone:
         self.items = {}
         self.distanceTraveled = 0
         
-    def move(self, x=0, y=0):
+    def move(self, x = 0, y = 0):
         self.xLocation += x
         self.yLocation += y
         self.distanceTraveled += 1

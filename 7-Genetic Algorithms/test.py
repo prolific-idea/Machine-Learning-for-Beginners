@@ -1,24 +1,18 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Feb 24 16:05:19 2017
-
-@author: jp.strydom
-"""
-
 import numpy as np
-import gene as g
-import chromosome as c
-import make_warehouses as MW
-import make_delivery_points as MDP
+from gene import Gene
+from chromosome import Chromosome
+from make_warehouses import make_warehouses
+from make_delivery_points import make_delivery_points
 
-gene1 = g.Gene(0, 'W')
-gene2 = g.Gene(1, 'N')
-gene3 = g.Gene(2, 'S')
-gene4 = g.Gene(2, 'W')
+
+gene1 = Gene(0, 'W')
+gene2 = Gene(1, 'N')
+gene3 = Gene(2, 'S')
+gene4 = Gene(2, 'W')
 
 array = np.array([gene1, gene2, gene3, gene4])
 
-chromosome = c.Chromosome(array)
+chromosome = Chromosome(array)
 
 while True:
     temp = chromosome.get_move()
@@ -31,14 +25,14 @@ print
 items = np.array(['book', 'pen', 'laptop', 'mug', 'ball', 
                   'shoes', 'shirt', 'DVD', 'tablet', 'dogfood'])
                   
-warehouse_array, total_warehouse_items = MW.make_warehouses([1, 10], items, [1, 10])
+warehouse_array, total_warehouse_items = make_warehouses([1, 10], items, [1, 10])
 if warehouse_array is not None:
     print "All Warehouse Items :\n", total_warehouse_items        
     print "\nWarehouse Items :"
     for warehouse in warehouse_array:
         print warehouse.items
                           
-delivery_array = MDP.make_delivery_points([1, 10], total_warehouse_items, [1, np.size(total_warehouse_items)-1])
+delivery_array = make_delivery_points([1, 10], total_warehouse_items, [1, np.size(total_warehouse_items)-1])
 if delivery_array is not None:
     print "\nDelivery Point Items :"
     for delivery in delivery_array:
