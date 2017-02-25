@@ -14,8 +14,12 @@ class Drone:
         self.items[warehouse_ID] = item
 
     def remove_item(self, item_to_remove):
-        for key in self.items.keys():
-            if self.items[key] == item_to_remove:
+        (result, key) = self.is_carrying_item(item_to_remove)
+        if result:
                 del self.items[key]
-                return True
+
+    def is_carrying_item(self, item):
+        for key in self.items.keys():
+            if self.items[key] == item:
+                return True, key
         return False
