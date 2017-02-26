@@ -1,6 +1,5 @@
 import numpy as np
 import random as rand
-from sys import exit
 
 from delivery import Delivery
 

@@ -51,10 +51,11 @@ if test_2:
     warehouse_inventory_size_range = [5, 10]
     delivery_point_num_range = [5, 10]
     item_num_range = [1, 5]
+    seed = None
 
     Map = make_map(map_x_range, map_y_range, items,
                  warehouse_num_range, warehouse_inventory_size_range,
-                 delivery_point_num_range, item_num_range)
+                 delivery_point_num_range, item_num_range, seed)
 
     for row in Map:
         for element in row:

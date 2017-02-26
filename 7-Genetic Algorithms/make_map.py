@@ -3,6 +3,24 @@ import random as rand
 from make_warehouses import make_warehouses
 from make_delivery_points import make_delivery_points
 
+
+"""
+Generates a random map containing Warehouse and Delivery objects conforming to the
+provided parameters.
+Input:  map_x_range => int array [minimum map x-axis size, maximum map x-axis size];
+        map_y_range => int array [minimum map y-axis size, maximum map y-axis size];
+        items => string array containing all of the possible items;
+        warehouse_num_range => int array [minimum number of Warehouse objects,
+                                          maximum number of Warehouse objects];
+        inventory_size_range => int array [minimum number of stock a Warehouse can have,
+                                           maximum number of stock a Warehouse can have];
+        delivery_point_num_range => int array [minimum number of Delivery objects,
+                                               maximum number of Delivery objects];
+        item_num_range => int array [minimum number of items a Delivery can have,
+                                     maximum number of items a Delivery can have];
+        seed => number to seed random number generationm with (default None).
+Output: Map => 2D array containing Warehouse and Delivery objects.
+"""
 def make_map(map_x_range, map_y_range, items,
              warehouse_num_range, warehouse_inventory_size_range,
              delivery_point_num_range, item_num_range, seed = None):
