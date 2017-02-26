@@ -1,4 +1,4 @@
-import sys
+from sys import exit
 from drone import Drone
 from delivery import Delivery
 from warehouse import Warehouse
