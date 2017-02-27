@@ -1,14 +1,17 @@
-from sys import exit
 from drone import Drone
 from delivery import Delivery
 from warehouse import Warehouse
 
 
+class InvalidMoveException(Exception):
+    pass
+
+
 def error(gene, details=""):
-    exit("Invalid gene: droneID: " + str(gene.drone_ID) +
-         ", Action: " + gene.action +
-         ", Action Parameter: " + str(gene.action_parameter) +
-         "\n" + details)
+    raise InvalidMoveException("Invalid gene: droneID: " + str(gene.drone_ID) +
+                               ", Action: " + gene.action +
+                               ", Action Parameter: " + str(gene.action_parameter) +
+                               "\n" + details)
 
 
 class Simulation:
