@@ -58,4 +58,12 @@ if test_2:
 
     print
 
+    print simulation_map.warehouse_items
+
+    print
+
+    print simulation_map.delivery_items
+
+    print
+
     print simulation_map.get_number_of_orders()

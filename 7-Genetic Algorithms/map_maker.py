@@ -64,6 +64,7 @@ class MapMaker:
         num_of_items = np.size(delivery_items)
         num_of_delivery_points = rand.randint(self.delivery_point_num_range[0], self.delivery_point_num_range[1])
         delivery_point_array = np.empty(num_of_delivery_points, dtype = object)
+        total_delivery_items = np.empty(0, dtype=object)
 
         for i in xrange(num_of_delivery_points):
             delivery_point_item_num = rand.randint(self.delivery_point_item_num_range[0], self.delivery_point_item_num_range[1])
@@ -76,10 +77,13 @@ class MapMaker:
                 else:
                     delivery_point_items[delivery_items[rand_int]] = 1
 
+                if delivery_items[rand_int] not in total_delivery_items:
+                    total_delivery_items = np.append(total_delivery_items, delivery_items[rand_int])
+
             delivery = Delivery(delivery_point_items)
             delivery_point_array[i] = delivery
 
-        return delivery_point_array
+        return delivery_point_array, total_delivery_items
 
 
     def make_map(self):
@@ -90,7 +94,7 @@ class MapMaker:
         simulation_map = np.empty([map_x, map_y], dtype = object)
 
         warehouses_array, warehouse_items = self.make_warehouses()
-        delivery_points_array = self.make_delivery_points(delivery_items = warehouse_items)
+        delivery_points_array, delivery_items = self.make_delivery_points(delivery_items = warehouse_items)
 
         for warehouse in warehouses_array:
             warehouse_x = rand.randint(0, map_x - 1)
@@ -108,4 +112,4 @@ class MapMaker:
                 delivery_point_y = rand.randint(0, map_y - 1)
             simulation_map[delivery_point_x, delivery_point_y] = delivery_point
 
-        return SimulationMap(simulation_map, warehouse_items)
+        return SimulationMap(simulation_map, warehouse_items, delivery_items)
