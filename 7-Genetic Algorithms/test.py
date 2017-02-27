@@ -10,6 +10,9 @@ from delivery import Delivery
 test_1 = False
 test_2 = True
 
+items = np.array(['book', 'pen', 'laptop', 'mug', 'ball',
+                  'shoes', 'shirt', 'DVD', 'tablet', 'dogfood'])
+
 if test_1:
     gene1 = Gene(0, 'W')
     gene2 = Gene(1, 'N')
@@ -27,9 +30,6 @@ if test_1:
         print temp.drone_ID, temp.action, temp.action_parameter
 
     print
-
-    items = np.array(['book', 'pen', 'laptop', 'mug', 'ball',
-                      'shoes', 'shirt', 'DVD', 'tablet', 'dogfood'])
 
     warehouse_array, total_warehouse_items = make_warehouses([1, 10], items, [1, 10])
     print "All Warehouse Items :\n", total_warehouse_items
