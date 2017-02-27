@@ -6,9 +6,11 @@ from make_delivery_points import make_delivery_points
 from make_map import make_map
 from warehouse import Warehouse
 from delivery import Delivery
+from map_maker import MapMaker
 
 test_1 = False
-test_2 = True
+test_2 = False
+test_3 = True
 
 items = np.array(['book', 'pen', 'laptop', 'mug', 'ball',
                   'shoes', 'shirt', 'DVD', 'tablet', 'dogfood'])
@@ -53,11 +55,11 @@ if test_2:
     item_num_range = [1, 5]
     seed = None
 
-    Map = make_map(map_x_range, map_y_range, items,
+    simulation_map = make_map(map_x_range, map_y_range, items,
                  warehouse_num_range, warehouse_inventory_size_range,
                  delivery_point_num_range, item_num_range, seed)
 
-    Inv_Map = np.transpose(Map)
+    Inv_Map = np.transpose(simulation_map)
     for row in Inv_Map:
         for element in row:
             if element == None:
@@ -73,6 +75,34 @@ if test_2:
     warehouse_count = 0
     delivery_count = 0
     for row in Inv_Map:
+        for element in row:
+            if isinstance(element, Warehouse):
+                print "Warehouse no.", warehouse_count, "items:", element.items
+                warehouse_count += 1
+            elif isinstance(element, Delivery):
+                print "Delivery point no.", delivery_count, "orders:", element.orders
+                delivery_count += 1
+
+
+if test_3:
+    map_maker = MapMaker()
+    simulation_map = map_maker.make_map()
+    inv_simulation_map = np.transpose(simulation_map)
+    for row in inv_simulation_map:
+        for element in row:
+            if element == None:
+                print ".",
+            elif isinstance(element, Warehouse):
+                print "W",
+            elif isinstance(element, Delivery):
+                print "D",
+        print
+
+    print
+
+    warehouse_count = 0
+    delivery_count = 0
+    for row in inv_simulation_map:
         for element in row:
             if isinstance(element, Warehouse):
                 print "Warehouse no.", warehouse_count, "items:", element.items
