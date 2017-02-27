@@ -47,7 +47,7 @@ class Simulation:
         self.drones[gene.drone_ID].move(0, -1)
 
     def move_south(self, gene):
-        if self.drones[gene.drone_ID].yLocation + 1 > self.simulation_map.shape[0]:
+        if self.drones[gene.drone_ID].yLocation + 1 > self.simulation_map.simulation_map.shape[1]:
             error(gene, "Map index out of range")
         self.drones[gene.drone_ID].move(0, 1)
 
@@ -57,15 +57,15 @@ class Simulation:
         self.drones[gene.drone_ID].move(-1, 0)
 
     def move_east(self, gene):
-        if self.drones[gene.drone_ID].xLocation + 1 > self.simulation_map.shape[1]:
+        if self.drones[gene.drone_ID].xLocation + 1 > self.simulation_map.simulation_map.shape[0]:
             error(gene, "Map index out of range")
         self.drones[gene.drone_ID].move(1, 0)
 
     def drop_item(self, gene):
         if gene.action_parameter is None:
             error(gene, "No item specified to drop")
-        location = self.simulation_map[self.drones[gene.drone_ID].yLocation][
-                                       self.drones[gene.drone_ID].xLocation]
+        location = self.simulation_map.simulation_map[self.drones[gene.drone_ID].xLocation][
+                                                      self.drones[gene.drone_ID].yLocation]
         if not isinstance(location, Delivery):
             error(gene, "Invalid drop-off location")
         elif not self.drones[gene.drone_ID].is_carrying_item(gene.action_parameter):
@@ -77,8 +77,8 @@ class Simulation:
     def pickup_item(self, gene):
         if gene.action_parameter is None:
             error(gene, "No item specified to pick-up")
-        location = self.simulation_map[self.drones[gene.drone_ID].yLocation][
-                                       self.drones[gene.drone_ID].xLocation]
+        location = self.simulation_map.simulation_map[self.drones[gene.drone_ID].xLocation][
+                                                      self.drones[gene.drone_ID].yLocation]
         if not isinstance(location, Warehouse):
             error(gene, "Invalid pick-up location")
         elif gene.action_parameter not in location.items:

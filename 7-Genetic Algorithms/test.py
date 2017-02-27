@@ -31,7 +31,7 @@ if test_1:
 
 
 if test_2:
-    map_maker = MapMaker(seed = None)
+    map_maker = MapMaker(seed = 123)
     simulation_map = map_maker.make_map()
     inv_simulation_map = np.transpose(simulation_map.simulation_map)
     for row in inv_simulation_map:
@@ -43,7 +43,6 @@ if test_2:
             elif isinstance(element, Delivery):
                 print "D",
         print
-
     print
 
     warehouse_count = 0
