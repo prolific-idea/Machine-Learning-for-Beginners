@@ -4,6 +4,7 @@ from sys import exit
 
 from warehouse import Warehouse
 from delivery import Delivery
+from simulation_map import SimulationMap
 
 class MapMaker:
     def __init__(self,
@@ -13,7 +14,7 @@ class MapMaker:
                  warehouse_num_range = [1, 5],
                  warehouse_inventory_size_range = [5, 10],
                  delivery_point_num_range = [5, 10],
-                 item_num_range = [1, 10],
+                 delivery_point_item_num_range = [1, 10],
                  seed = None):
          self.map_x_range = map_y_range
          self.map_y_range = map_y_range
@@ -21,7 +22,7 @@ class MapMaker:
          self.warehouse_num_range = warehouse_num_range
          self.warehouse_inventory_size_range = warehouse_inventory_size_range
          self.delivery_point_num_range = delivery_point_num_range
-         self.item_num_range = item_num_range
+         self.delivery_point_item_num_range = delivery_point_item_num_range
          self.seed = seed
 
 
@@ -57,23 +58,23 @@ class MapMaker:
         return warehouse_array, total_warehouse_items
 
 
-    def make_delivery_points(self, items):
+    def make_delivery_points(self, delivery_items):
         if self.seed != None:
             rand.seed(self.seed)
-        num_of_items = np.size(items)
+        num_of_items = np.size(delivery_items)
         num_of_delivery_points = rand.randint(self.delivery_point_num_range[0], self.delivery_point_num_range[1])
         delivery_point_array = np.empty(num_of_delivery_points, dtype = object)
 
         for i in xrange(num_of_delivery_points):
-            delivery_point_item_num = rand.randint(self.item_num_range[0], self.item_num_range[1])
+            delivery_point_item_num = rand.randint(self.delivery_point_item_num_range[0], self.delivery_point_item_num_range[1])
             delivery_point_items = {}
 
             for j in xrange(delivery_point_item_num):
                 rand_int = rand.randint(0, num_of_items-1)
-                if items[rand_int] in delivery_point_items:
-                    delivery_point_items[items[rand_int]] += 1
+                if delivery_items[rand_int] in delivery_point_items:
+                    delivery_point_items[delivery_items[rand_int]] += 1
                 else:
-                    delivery_point_items[items[rand_int]] = 1
+                    delivery_point_items[delivery_items[rand_int]] = 1
 
             delivery = Delivery(delivery_point_items)
             delivery_point_array[i] = delivery
@@ -89,7 +90,7 @@ class MapMaker:
         simulation_map = np.empty([map_x, map_y], dtype = object)
 
         warehouses_array, warehouse_items = self.make_warehouses()
-        delivery_points_array = self.make_delivery_points(items = warehouse_items)
+        delivery_points_array = self.make_delivery_points(delivery_items = warehouse_items)
 
         for warehouse in warehouses_array:
             warehouse_x = rand.randint(0, map_x - 1)
@@ -107,4 +108,4 @@ class MapMaker:
                 delivery_point_y = rand.randint(0, map_y - 1)
             simulation_map[delivery_point_x, delivery_point_y] = delivery_point
 
-        return simulation_map
+        return SimulationMap(simulation_map, warehouse_items)
