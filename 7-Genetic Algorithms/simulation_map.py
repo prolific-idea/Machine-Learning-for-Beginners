@@ -1,9 +1,10 @@
 from delivery import Delivery
 
 class SimulationMap:
-    def __init__(self, simulation_map, warehouse_items):
+    def __init__(self, simulation_map, warehouse_items, delivery_items):
         self.simulation_map = simulation_map
         self.warehouse_items = warehouse_items
+        self.delivery_items = delivery_items
 
     def get_number_of_orders(self):
         number_of_orders = 0
