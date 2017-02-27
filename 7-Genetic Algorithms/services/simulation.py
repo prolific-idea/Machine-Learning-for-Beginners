@@ -1,6 +1,7 @@
-from drone import Drone
-from delivery import Delivery
-from warehouse import Warehouse
+from domain.drone import Drone
+from domain.warehouse import Warehouse
+
+from domain.delivery import Delivery
 
 
 class InvalidMoveException(Exception):

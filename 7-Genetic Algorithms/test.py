@@ -1,9 +1,9 @@
 import numpy as np
-from gene import Gene
-from chromosome import Chromosome
-from warehouse import Warehouse
-from delivery import Delivery
-from map_maker import MapMaker
+from domain.gene import Gene
+from domain.chromosome import Chromosome
+from domain.warehouse import Warehouse
+from domain.delivery import Delivery
+from services.map_maker import MapMaker
 
 test_1 = False
 test_2 = True
@@ -31,7 +31,7 @@ if test_1:
 
 
 if test_2:
-    map_maker = MapMaker(seed = 123)
+    map_maker = MapMaker(seed = None)
     simulation_map = map_maker.make_map()
     inv_simulation_map = np.transpose(simulation_map.simulation_map)
     for row in inv_simulation_map:

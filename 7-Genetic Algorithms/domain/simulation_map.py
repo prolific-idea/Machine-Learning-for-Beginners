@@ -1,4 +1,4 @@
-from delivery import Delivery
+from domain.delivery import Delivery
 
 class SimulationMap:
     def __init__(self, simulation_map, warehouse_items, delivery_items):

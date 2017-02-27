@@ -1,5 +1,5 @@
-from simulation import Simulation, InvalidMoveException
-from map_maker import *
+from services.simulation import Simulation, InvalidMoveException
+from services.map_maker import *
 import numpy as np
 
 

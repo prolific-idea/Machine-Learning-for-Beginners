@@ -1,10 +1,12 @@
-import numpy as np
 import random as rand
 from sys import exit
 
-from warehouse import Warehouse
-from delivery import Delivery
-from simulation_map import SimulationMap
+import numpy as np
+from domain.warehouse import Warehouse
+
+from domain.delivery import Delivery
+from domain.simulation_map import SimulationMap
+
 
 class MapMaker:
     def __init__(self,
@@ -16,7 +18,7 @@ class MapMaker:
                  delivery_point_num_range = [5, 10],
                  delivery_point_item_num_range = [1, 10],
                  seed = None):
-         self.map_x_range = map_y_range
+         self.map_x_range = map_x_range
          self.map_y_range = map_y_range
          self.warehouse_items = items
          self.warehouse_num_range = warehouse_num_range
