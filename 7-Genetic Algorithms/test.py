@@ -10,6 +10,9 @@ from delivery import Delivery
 test_1 = False
 test_2 = True
 
+items = np.array(['book', 'pen', 'laptop', 'mug', 'ball',
+                  'shoes', 'shirt', 'DVD', 'tablet', 'dogfood'])
+
 if test_1:
     gene1 = Gene(0, 'W')
     gene2 = Gene(1, 'N')
@@ -27,9 +30,6 @@ if test_1:
         print temp.drone_ID, temp.action, temp.action_parameter
 
     print
-
-    items = np.array(['book', 'pen', 'laptop', 'mug', 'ball',
-                      'shoes', 'shirt', 'DVD', 'tablet', 'dogfood'])
 
     warehouse_array, total_warehouse_items = make_warehouses([1, 10], items, [1, 10])
     print "All Warehouse Items :\n", total_warehouse_items
@@ -57,7 +57,8 @@ if test_2:
                  warehouse_num_range, warehouse_inventory_size_range,
                  delivery_point_num_range, item_num_range, seed)
 
-    for row in Map:
+    Inv_Map = np.transpose(Map)
+    for row in Inv_Map:
         for element in row:
             if element == None:
                 print ".",
@@ -71,7 +72,7 @@ if test_2:
 
     warehouse_count = 0
     delivery_count = 0
-    for row in Map:
+    for row in Inv_Map:
         for element in row:
             if isinstance(element, Warehouse):
                 print "Warehouse no.", warehouse_count, "items:", element.items
