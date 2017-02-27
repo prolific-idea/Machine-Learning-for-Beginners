@@ -15,16 +15,15 @@ def error(gene, details=""):
 
 
 class Simulation:
-    def __init__(self, number_of_drones, simulation_map, chromosome):
+    def __init__(self, number_of_drones, simulation_map):
         self.number_of_drones = number_of_drones
         self.simulation_map = simulation_map
-        self.chromosome = chromosome
         self.drones = []
         self.possible_moves = {}
         for i in range(number_of_drones):
             self.drones.append(Drone())
 
-    def run(self):
+    def run(self, chromosome):
         self.possible_moves = {"N": self.move_north,
                                "S": self.move_south,
                                "W": self.move_west,
@@ -32,7 +31,7 @@ class Simulation:
                                "D": self.drop_item,
                                "P": self.pickup_item}
         while True:
-            gene = self.chromosome.get_move()
+            gene = chromosome.get_move()
             if gene is False:
                 break
             elif gene.drone_ID > self.number_of_drones-1:
