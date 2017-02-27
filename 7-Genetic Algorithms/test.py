@@ -57,7 +57,8 @@ if test_2:
                  warehouse_num_range, warehouse_inventory_size_range,
                  delivery_point_num_range, item_num_range, seed)
 
-    for row in Map:
+    Inv_Map = np.transpose(Map)
+    for row in Inv_Map:
         for element in row:
             if element == None:
                 print ".",
@@ -71,7 +72,7 @@ if test_2:
 
     warehouse_count = 0
     delivery_count = 0
-    for row in Map:
+    for row in Inv_Map:
         for element in row:
             if isinstance(element, Warehouse):
                 print "Warehouse no.", warehouse_count, "items:", element.items
