@@ -31,9 +31,9 @@ if test_1:
 
 
 if test_2:
-    map_maker = MapMaker(seed = 5)
+    map_maker = MapMaker(seed = None)
     simulation_map = map_maker.make_map()
-    inv_simulation_map = np.transpose(simulation_map)
+    inv_simulation_map = np.transpose(simulation_map.simulation_map)
     for row in inv_simulation_map:
         for element in row:
             if element == None:
@@ -56,3 +56,7 @@ if test_2:
             elif isinstance(element, Delivery):
                 print "Delivery point no.", delivery_count, "orders:", element.orders
                 delivery_count += 1
+
+    print
+
+    print simulation_map.get_number_of_orders()
