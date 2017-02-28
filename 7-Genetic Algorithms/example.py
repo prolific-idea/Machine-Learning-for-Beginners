@@ -1,7 +1,8 @@
 import numpy as np
+
 from domain.chromosome import Chromosome
 from domain.gene import Gene
-from fitness import FitnessCalculator
+from services.fitness import FitnessCalculator
 
 number_of_drones = 5
 map_seed = 123

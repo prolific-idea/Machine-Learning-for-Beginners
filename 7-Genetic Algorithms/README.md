@@ -7,7 +7,7 @@ The following software is required:
 + [Numpy](http://www.numpy.org)
 
 ##Hackathon - Drone Delivery System
-For this meetup we will be using genetic algorithms to optimize a drone delivery system by modelling an instruction as a gene and a collection of instructions as a chromosome.
+For this hackathon we will be using genetic algorithms to optimize a drone delivery system by modelling an instruction as a gene and a collection of instructions as a chromosome.
 
 A two-dimensional array will be used to represent a geographical map. Such a map will contain empty cells, warehouses, and delivery points. A predetermined amount of drones will initially reside at the top-left most corner-cell on the map. Your goal is to generate movement and action commands for these drones to complete as many possible deliveries in as few as possible moves.
 
@@ -19,7 +19,41 @@ W . . D D
 . . . . .
 . D W . .
 ```
+The restrictions imposed on the drones are as follows:
+
+   + Drones(D) deliver items
+   + Items reside at warehouses(W)
+   + Drones start at 0, 0
+   + Drones may only pick up one item per warehouse
+   + Drones may carry unlimited items as long as each are from a different warehouse
+   + Drones cannot pick up from a delivery point or empty cell
+   + Drones cannot drop to a warehouse
+  
+The restrictions on warehouse and deliveries:
+
+   + Warehouses can contain an unlimited supply of one or many items.
+   + Deliveries may require one or many items that reside at one or many warehouses.
+
+Each drone can perform any of the following moves:
+   + '**N**' - Move North
+   + '**S**' - Move South
+   + '**W**' - Move West
+   + '**E**' - Move East
+   + '**P**' - Pick up | This requires an additional string parameter of what to pick up.
+   + '**D**' - Drop | This requires an additional string parameter of what to drop.
+
+Invalid moves will cause the chromosome to be evaluated with the worst possible fitness. Invalid moves include:
+   + Moving out of the bounds of the map.
+   + Attempting to pick up from a cell that isn't a warehouse.
+   + Attempting to pick up an item a warehouse does'nt stock.
+   + Attempting to drop an item where there is no delivery point.
+   + Attempting to drop an item at a delivery point that does'nt want that item.    
+   + Attempting to drop an item that the drone isn't carrying.
+
+
 In the above map, going from left to right and top to bottom, the following information can be gathered about the respective entities and their delivery/stock items:
+
+
 ```
 Warehouse no. 0 Items: ['mug' 'ball' 'dogfood' 'book' 'pen']
 Delivery Point no. 0 Orders: {'mug': 1}
@@ -38,22 +72,6 @@ Collective Delivery Items: ['mug' 'pen' 'dogfood' 'shoes' 'ball' 'book' 'tablet'
  
 Collective Delivery Quantity: 11 
 ```
-
-Each drone can perform any of the following moves:
-   + '**N**' - Move North
-   + '**S**' - Move South
-   + '**W**' - Move West
-   + '**E**' - Move East
-   + '**P**' - Pick up | This requires an additional string parameter of what to pick up.
-   + '**D**' - Drop | This requires an additional string parameter of what to drop.
-
-Invalid moves will cause the chromosome to be evaluated with the worst possible fitness. Invalid moves include:
-   + Moving out of the bounds of the map.
-   + Attempting to pick up from a cell that isn't a warehouse.
-   + Attempting to pick up an item a warehouse doesn't stock.
-   + Attempting to drop an item where there is no delivery point.
-   + Attempting to drop an item at a delivery point that doesn't want that item.    
-   + Attempting to drop an item that the drone isn't carrying.
 
 ##Fitness Calculator
 The fitness calculator will estimate how well a choromosome performs. Based on this performance, you can choose which chormosomes to use for your GA's next generation, and which to discard. The fitness calculator takes in a chromosome and returns and array of fitness measures.
