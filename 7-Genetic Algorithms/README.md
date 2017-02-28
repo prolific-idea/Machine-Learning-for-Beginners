@@ -103,7 +103,7 @@ fitness = calculator.get_fitness(chromosome)
 Use the returned fitness to judge chromosomes best suited for the next generation. 
 
 *Note: The *example.py* file contains a detailed example on how to use the fitness calculator, 
-including how to structure a gene and a chromosome.*
+including how to structure a gene and a chromosome.
 
 ##References
    1. [Wikipedia - Genetic Algorithms](https://en.wikipedia.org/wiki/Genetic_algorithm)
