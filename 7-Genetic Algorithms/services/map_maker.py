@@ -18,14 +18,24 @@ class MapMaker:
                  delivery_point_num_range = [5, 10],
                  delivery_point_item_num_range = [1, 10],
                  seed = None):
-         self.map_x_range = map_x_range
-         self.map_y_range = map_y_range
-         self.warehouse_items = items
-         self.warehouse_num_range = warehouse_num_range
-         self.warehouse_inventory_size_range = warehouse_inventory_size_range
-         self.delivery_point_num_range = delivery_point_num_range
-         self.delivery_point_item_num_range = delivery_point_item_num_range
-         self.seed = seed
+         if seed < 100 and seed != None:
+             self.map_x_range = [250, 250]
+             self.map_y_range = [250, 250]
+             self.warehouse_items = np.array(['book','pen','laptop','mug','ball','shoes','shirt','DVD','tablet','dogfood','toy','vase','soap','keyboard','knife','backpack','remote','ring','speakers','clamp','brush'])
+             self.warehouse_num_range = [20, 20]
+             self.warehouse_inventory_size_range = [10, 20]
+             self.delivery_point_num_range = [500, 500]
+             self.delivery_point_item_num_range = [1, 20]
+             self.seed = seed
+         else:
+             self.map_x_range = map_x_range
+             self.map_y_range = map_y_range
+             self.warehouse_items = items
+             self.warehouse_num_range = warehouse_num_range
+             self.warehouse_inventory_size_range = warehouse_inventory_size_range
+             self.delivery_point_num_range = delivery_point_num_range
+             self.delivery_point_item_num_range = delivery_point_item_num_range
+             self.seed = seed
 
 
     def make_warehouses(self):
