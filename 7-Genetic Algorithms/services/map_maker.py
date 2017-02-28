@@ -10,8 +10,8 @@ from domain.simulation_map import SimulationMap
 
 class MapMaker:
     def __init__(self,
-                 map_x_range = [5, 10],
-                 map_y_range = [5, 10],
+                 map_x_range = [5, 15],
+                 map_y_range = [5, 15],
                  items = np.array(['book','pen','laptop','mug','ball','shoes','shirt','DVD','tablet','dogfood']),
                  warehouse_num_range = [1, 5],
                  warehouse_inventory_size_range = [5, 10],
