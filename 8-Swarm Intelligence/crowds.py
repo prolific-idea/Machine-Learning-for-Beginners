@@ -3,9 +3,9 @@ import sys
 import os
 from random import randint
 
-MAP_SIZE_X = 32
-MAP_SIZE_Y = 67
-NUMBER_OF_INDIVIDUALS = 500
+MAP_SIZE_X = 16
+MAP_SIZE_Y = 35
+NUMBER_OF_INDIVIDUALS = 25
 DOOR_SPACING = 5
 
 BLOCK_EMPTY = "_"
