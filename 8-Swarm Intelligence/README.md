@@ -50,3 +50,5 @@ Minimise the number of moves required for all individuals to move from the left 
 ### Additional Related Links
 * [Artificial Life: Conway's Game of Life](https://jakevdp.github.io/blog/2013/08/07/conways-game-of-life/)
 * [PSO Tutorial with Python](http://www.swarmintelligence.org/tutorials.php)
+* [Ant Colony Optimisation](https://github.com/pjmattingly/ant-colony-optimization)
+* [Crowd Simulation in Python](http://pub.tik.ee.ethz.ch/students/2016-FS/BA-2016-10.pdf)
